@@ -292,7 +292,7 @@ export const AR_TEXTS: LocalizedTexts = {
   CHAT_INTERFACE_TITLE: "دردشة KNOX AI (مدعومة بـ Gemini)",
   CHAT_INPUT_PLACEHOLDER: "اسأل عبقري الذكاء الاصطناعي...",
   AI_ANALYSIS_MODAL_TITLE: "تقرير تحليل التهديدات بالذكاء الاصطناعي",
-  AI_ANALYZING_TOAST: "جاري تحليل التهديدات بواسطة Gemini AI...",
+  AI_ANALYZING_TOAST: "جاري تح��يل التهديدات بواسطة Gemini AI...",
   AI_ANALYSIS_COMPLETE_TOAST: "اكتمل تحليل AI! عرض التقرير.",
   AI_ANALYSIS_ERROR_TOAST: "فشل تحليل AI. حاول مرة أخرى.",
   API_KEY_MISSING_ERROR:
@@ -325,7 +325,7 @@ export const AR_TEXTS: LocalizedTexts = {
   THREAT_DB_PROCESS_SCAN: "فحص العمليات قيد التشغيل...",
   THREAT_DB_STARTUP_SCAN: "تحليل إدخالات بدء التشغيل...",
   THREAT_DB_SIGNATURE_SCAN: "مطابقة توقيعات الملفات...",
-  THREAT_DETECTED_PREFIX: "تم اكتشاف تهديد:",
+  THREAT_DETECTED_PREFIX: "تم اكتشاف تهد��د:",
   THREAT_ANALYSIS_PROMPT_PREFIX:
     "حلل نتائج الفحص الأمني المحتملة التالية. قدم تقييمًا موجزًا للمخاطر، والتأثير المحتمل، ونصا��ح عامة للتخفيف لكل منها. نسقها كتقرير قابل للقراءة:\n\n",
   THREAT_TYPE_PROCESS: "عملية قد تكون ضارة",
@@ -379,6 +379,16 @@ export const AR_TEXTS: LocalizedTexts = {
   NOTIFICATIONS_ENABLED_SUCCESS: "تم تفعيل إشعارات سطح المكتب!",
   NOTIFICATIONS_ENABLED_WARN:
     "تم رفض إشعارات سطح المكتب. قد تفوتك بعض التنبيهات.",
+
+  // VPN Dashboard Arabic
+  VPN_DASHBOARD_TITLE: "شبكة نوكس الخاصة الافتراضية",
+  VPN_DASHBOARD_SUBTITLE:
+    "إصدار SentinelTracker - مركز التحكم النهائي بالشبكة الافتراضية",
+  VPN_CONNECT_BUTTON: "اتصال",
+  VPN_DISCONNECT_BUTTON: "قطع الاتصال",
+  VPN_CONNECTING_STATUS: "جاري الاتصال...",
+  VPN_CONNECTED_STATUS: "متصل",
+  VPN_DISCONNECTED_STATUS: "غير متصل",
 };
 
 export const THREAT_DB: {
