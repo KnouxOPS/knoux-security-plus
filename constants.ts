@@ -315,7 +315,7 @@ export const AR_TEXTS: LocalizedTexts = {
   THREAT_DB_SIGNATURE_SCAN: "مطابقة توقيعات الملفات...",
   THREAT_DETECTED_PREFIX: "تم اكتشاف تهديد:",
   THREAT_ANALYSIS_PROMPT_PREFIX:
-    "حلل نتائج الفحص الأمني المحتملة التالية. قدم تقييمًا موجزًا للمخاطر، والتأثير المحتمل، ونصائح عامة للتخفيف لكل منها. نسقها كتقرير قابل للقراءة:\n\n",
+    "حلل نتائج الفحص الأمني المحتملة التالية. قدم ت��ييمًا موجزًا للمخاطر، والتأثير المحتمل، ونصائح عامة للتخفيف لكل منها. نسقها كتقرير قابل للقراءة:\n\n",
   THREAT_TYPE_PROCESS: "عملية قد تكون ضارة",
   THREAT_TYPE_STARTUP: "عنصر بدء تشغيل مشبوه",
   THREAT_TYPE_SIGNATURE: "مطابقة توقيع برنامج ضار",
@@ -1486,6 +1486,1705 @@ const botsAndAIModelsArray: Tool[] = [
         placeholder: "example@email.com",
       },
     ],
+  },
+];
+
+// 🛡️ KNOUX SHIELD - SentinelTracker Edition Tools Arrays
+
+// 🔰 1. System Protection Tools
+const knoxSystemProtectionArray: Tool[] = [
+  {
+    id: "knox_full_scan",
+    name: "Full Scan",
+    description: "Comprehensive system-wide security scan.",
+    icon: MagnifyingGlassIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox System Protection",
+    longDescription:
+      "Performs a deep, comprehensive scan of your entire system including files, registry, memory, and network connections. Uses advanced heuristics and signature-based detection to identify malware, rootkits, and suspicious activities.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Scan Depth",
+        type: "select",
+        options: ["Quick", "Standard", "Deep", "Paranoid"],
+        required: true,
+      },
+      {
+        label: "Include Network Scan",
+        type: "select",
+        options: ["Yes", "No"],
+        defaultValue: "Yes",
+      },
+      {
+        label: "Real-time Analysis",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+    ],
+    runTemplates: [
+      "Standard Security Scan",
+      "Deep Threat Analysis",
+      "Quick System Check",
+    ],
+  },
+  {
+    id: "knox_rootkit_checker",
+    name: "Rootkit Checker",
+    description: "Advanced rootkit detection and removal.",
+    icon: ExclamationTriangleIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox System Protection",
+    longDescription:
+      "Specialized tool for detecting and removing sophisticated rootkits that hide deep within the system. Uses kernel-level scanning techniques and behavioral analysis to identify hidden threats.",
+    sampleExecutionParams: [
+      {
+        label: "Scan Method",
+        type: "select",
+        options: ["Kernel Analysis", "Memory Scan", "Hybrid"],
+        required: true,
+      },
+      {
+        label: "Detection Level",
+        type: "select",
+        options: ["Conservative", "Balanced", "Aggressive"],
+        defaultValue: "Balanced",
+      },
+    ],
+    runTemplates: [
+      "Quick Rootkit Scan",
+      "Deep Kernel Analysis",
+      "Memory Rootkit Hunt",
+    ],
+  },
+  {
+    id: "knox_firewall_manager",
+    name: "Firewall Manager",
+    description: "Advanced firewall configuration and monitoring.",
+    icon: ShieldCheckIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox System Protection",
+    longDescription:
+      "Comprehensive firewall management tool that provides advanced rule configuration, traffic monitoring, and intrusion detection capabilities with AI-powered threat analysis.",
+    sampleExecutionParams: [
+      {
+        label: "Protection Mode",
+        type: "select",
+        options: ["Stealth", "Balanced", "Open"],
+        required: true,
+      },
+      {
+        label: "Auto-Block Threats",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+      {
+        label: "Log Detail Level",
+        type: "select",
+        options: ["Basic", "Detailed", "Verbose"],
+        defaultValue: "Detailed",
+      },
+    ],
+    runTemplates: ["Secure Configuration", "Gaming Mode", "Enterprise Setup"],
+  },
+  {
+    id: "knox_realtime_shield",
+    name: "Real-Time Shield",
+    description: "Continuous real-time system protection.",
+    icon: BoltIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox System Protection",
+    longDescription:
+      "Always-on protection system that monitors file system changes, network traffic, and process activities in real-time. Provides instant threat detection and automatic response.",
+    sampleExecutionParams: [
+      {
+        label: "Protection Level",
+        type: "select",
+        options: ["Basic", "Enhanced", "Maximum"],
+        required: true,
+      },
+      {
+        label: "Auto-Quarantine",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+      {
+        label: "Performance Mode",
+        type: "select",
+        options: ["Balanced", "Performance", "Security"],
+        defaultValue: "Balanced",
+      },
+    ],
+    runTemplates: ["Standard Protection", "Gaming Mode", "Server Protection"],
+  },
+  {
+    id: "knox_system_log_wiper",
+    name: "System Log Wiper",
+    description: "Secure system log cleaning and privacy protection.",
+    icon: TrashIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox System Protection",
+    longDescription:
+      "Advanced log cleaning tool that securely removes system logs, event logs, and traces while maintaining system integrity. Includes forensic-grade wiping capabilities.",
+    sampleExecutionParams: [
+      {
+        label: "Wipe Level",
+        type: "select",
+        options: ["Standard", "Secure", "Military Grade"],
+        required: true,
+      },
+      {
+        label: "Log Types",
+        type: "select",
+        options: ["System Only", "Application Logs", "All Logs"],
+        defaultValue: "System Only",
+      },
+      {
+        label: "Backup Before Wipe",
+        type: "select",
+        options: ["Yes", "No"],
+        defaultValue: "Yes",
+      },
+    ],
+    runTemplates: ["Privacy Cleanup", "Forensic Wipe", "Standard Maintenance"],
+  },
+  {
+    id: "knox_mbr_scanner",
+    name: "MBR Scanner",
+    description: "Master Boot Record integrity verification.",
+    icon: ComputerDesktopIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox System Protection",
+    longDescription:
+      "Specialized tool for scanning and protecting the Master Boot Record (MBR) and boot sectors. Detects boot sector viruses and rootkits that infect the system startup process.",
+    sampleExecutionParams: [
+      {
+        label: "Scan Type",
+        type: "select",
+        options: ["MBR Only", "Boot Sectors", "Complete Boot Chain"],
+        required: true,
+      },
+      {
+        label: "Verification Method",
+        type: "select",
+        options: ["Checksum", "Signature", "Behavioral"],
+        defaultValue: "Signature",
+      },
+      {
+        label: "Auto-Repair",
+        type: "select",
+        options: ["Enabled", "Prompt", "Disabled"],
+        defaultValue: "Prompt",
+      },
+    ],
+    runTemplates: [
+      "Quick MBR Check",
+      "Full Boot Analysis",
+      "Boot Sector Repair",
+    ],
+  },
+  {
+    id: "knox_self_heal",
+    name: "Self-Heal Tool",
+    description: "Automatic system repair and optimization.",
+    icon: CheckCircleIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox System Protection",
+    longDescription:
+      "AI-powered system repair tool that automatically detects and fixes system issues, registry errors, and performance problems. Includes predictive maintenance capabilities.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Repair Scope",
+        type: "select",
+        options: ["Critical Only", "Standard", "Comprehensive"],
+        required: true,
+      },
+      {
+        label: "Auto-Optimize",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+      {
+        label: "Create Restore Point",
+        type: "select",
+        options: ["Yes", "No"],
+        defaultValue: "Yes",
+      },
+    ],
+    runTemplates: [
+      "Quick Health Check",
+      "Full System Repair",
+      "Performance Optimization",
+    ],
+  },
+];
+
+// 🔥 2. Attack Tools (Penetration Testing)
+const knoxAttackToolsArray: Tool[] = [
+  {
+    id: "knox_kill_malware",
+    name: "Kill Background Malware",
+    description: "Aggressive malware termination and removal.",
+    icon: XMarkIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Attack Tools",
+    longDescription:
+      "Advanced malware hunter that uses aggressive techniques to identify and terminate sophisticated malware, including process injection, memory patching, and kernel-level threats.",
+    sampleExecutionParams: [
+      {
+        label: "Termination Method",
+        type: "select",
+        options: ["Standard", "Force Kill", "Kernel Termination"],
+        required: true,
+      },
+      {
+        label: "Target Processes",
+        type: "select",
+        options: ["Suspicious Only", "All Unknown", "Custom List"],
+        defaultValue: "Suspicious Only",
+      },
+      {
+        label: "Auto-Quarantine",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+    ],
+    runTemplates: [
+      "Emergency Cleanup",
+      "Suspicious Process Hunt",
+      "Complete Malware Purge",
+    ],
+  },
+  {
+    id: "knox_phishing_gen",
+    name: "Generate Phishing",
+    description: "Phishing simulation for security testing.",
+    icon: FunnelIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Attack Tools",
+    longDescription:
+      "Educational phishing simulation tool for security awareness training and penetration testing. Creates realistic phishing scenarios to test organization security awareness.",
+    sampleExecutionParams: [
+      {
+        label: "Template Type",
+        type: "select",
+        options: ["Email Phishing", "SMS Phishing", "Website Clone"],
+        required: true,
+      },
+      {
+        label: "Target Platform",
+        type: "select",
+        options: ["Generic", "Corporate", "Social Media"],
+        defaultValue: "Generic",
+      },
+      {
+        label: "Difficulty Level",
+        type: "select",
+        options: ["Basic", "Intermediate", "Advanced"],
+        defaultValue: "Intermediate",
+      },
+    ],
+    runTemplates: [
+      "Email Campaign Test",
+      "Social Engineering Sim",
+      "Website Spoofing Test",
+    ],
+  },
+  {
+    id: "knox_exploit_finder",
+    name: "Exploit Finder",
+    description: "Vulnerability discovery and exploit identification.",
+    icon: BugAntIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Attack Tools",
+    longDescription:
+      "Advanced vulnerability scanner that identifies potential security flaws and matches them with known exploits. Includes zero-day detection capabilities.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Scan Target",
+        type: "text",
+        required: true,
+        placeholder: "IP address or domain",
+      },
+      {
+        label: "Scan Intensity",
+        type: "select",
+        options: ["Passive", "Active", "Aggressive"],
+        required: true,
+      },
+      {
+        label: "CVE Database",
+        type: "select",
+        options: ["Latest", "Historical", "Custom"],
+        defaultValue: "Latest",
+      },
+    ],
+    runTemplates: [
+      "Network Vulnerability Scan",
+      "Web Application Test",
+      "Service Enumeration",
+    ],
+  },
+  {
+    id: "knox_hash_check",
+    name: "Hash Check",
+    description: "File integrity verification and hash analysis.",
+    icon: KeyIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Attack Tools",
+    longDescription:
+      "Comprehensive hash verification tool supporting multiple algorithms. Can detect file tampering, verify downloads, and analyze file integrity across the system.",
+    sampleExecutionParams: [
+      {
+        label: "Hash Algorithm",
+        type: "select",
+        options: ["MD5", "SHA1", "SHA256", "SHA512", "All"],
+        required: true,
+      },
+      {
+        label: "Target Path",
+        type: "text",
+        required: true,
+        placeholder: "File or directory path",
+      },
+      {
+        label: "Compare Mode",
+        type: "select",
+        options: ["Generate Only", "Verify Against", "Database Check"],
+        defaultValue: "Generate Only",
+      },
+    ],
+    runTemplates: [
+      "File Integrity Check",
+      "Download Verification",
+      "System Files Audit",
+    ],
+  },
+  {
+    id: "knox_sniffer_trigger",
+    name: "Sniffer Trigger",
+    description: "Network traffic analysis and packet capture.",
+    icon: WifiIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Attack Tools",
+    longDescription:
+      "Advanced network sniffer for capturing and analyzing network traffic. Includes protocol analysis, pattern detection, and suspicious activity identification.",
+    sampleExecutionParams: [
+      {
+        label: "Interface",
+        type: "text",
+        required: true,
+        placeholder: "Network interface (e.g., eth0)",
+      },
+      {
+        label: "Capture Filter",
+        type: "text",
+        placeholder: "BPF filter expression",
+      },
+      {
+        label: "Analysis Mode",
+        type: "select",
+        options: ["Real-time", "Capture & Analyze", "Passive Monitor"],
+        defaultValue: "Real-time",
+      },
+    ],
+    runTemplates: [
+      "HTTP Traffic Analysis",
+      "Suspicious Activity Monitor",
+      "Protocol Analysis",
+    ],
+  },
+  {
+    id: "knox_payload_launcher",
+    name: "Payload Launcher",
+    description: "Security testing payload deployment system.",
+    icon: RocketLaunchIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Attack Tools",
+    longDescription:
+      "Advanced payload delivery system for penetration testing. Supports various payload types and delivery mechanisms for authorized security assessments.",
+    sampleExecutionParams: [
+      {
+        label: "Payload Type",
+        type: "select",
+        options: ["Reverse Shell", "Bind Shell", "Meterpreter", "Custom"],
+        required: true,
+      },
+      {
+        label: "Target System",
+        type: "text",
+        required: true,
+        placeholder: "Target IP or hostname",
+      },
+      {
+        label: "Delivery Method",
+        type: "select",
+        options: ["Direct", "Encoded", "Obfuscated"],
+        defaultValue: "Direct",
+      },
+    ],
+    runTemplates: [
+      "Basic Shell Access",
+      "Advanced Persistence",
+      "Custom Payload Test",
+    ],
+  },
+  {
+    id: "knox_recon_scanner",
+    name: "Recon Scanner",
+    description: "Comprehensive reconnaissance and information gathering.",
+    icon: DocumentMagnifyingGlassIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Attack Tools",
+    longDescription:
+      "Advanced reconnaissance tool for gathering information about targets including network mapping, service enumeration, and vulnerability assessment.",
+    sampleExecutionParams: [
+      {
+        label: "Target Range",
+        type: "text",
+        required: true,
+        placeholder: "IP range or single host",
+      },
+      {
+        label: "Scan Type",
+        type: "select",
+        options: [
+          "Network Discovery",
+          "Port Scan",
+          "Service Enum",
+          "Full Recon",
+        ],
+        required: true,
+      },
+      {
+        label: "Stealth Level",
+        type: "select",
+        options: ["Normal", "Stealth", "Aggressive"],
+        defaultValue: "Normal",
+      },
+    ],
+    runTemplates: [
+      "Network Mapping",
+      "Service Discovery",
+      "Vulnerability Assessment",
+    ],
+  },
+];
+
+// 🧹 3. Privacy & Tracking Tools
+const knoxPrivacyTrackingArray: Tool[] = [
+  {
+    id: "knox_wipe_traces",
+    name: "Wipe Traces",
+    description: "Complete digital footprint elimination.",
+    icon: TrashIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Privacy & Tracking",
+    longDescription:
+      "Advanced privacy tool that securely removes all digital traces including browser history, temporary files, system logs, and metadata. Uses military-grade wiping algorithms.",
+    sampleExecutionParams: [
+      {
+        label: "Wipe Level",
+        type: "select",
+        options: ["Standard", "Secure", "Military Grade"],
+        required: true,
+      },
+      {
+        label: "Target Areas",
+        type: "select",
+        options: ["Browser Only", "System Wide", "Custom"],
+        defaultValue: "System Wide",
+      },
+      {
+        label: "Verification",
+        type: "select",
+        options: ["Quick", "Thorough", "Forensic"],
+        defaultValue: "Thorough",
+      },
+    ],
+    runTemplates: [
+      "Quick Privacy Clean",
+      "Deep Trace Removal",
+      "Forensic Wipe",
+    ],
+  },
+  {
+    id: "knox_disable_telemetry",
+    name: "Disable Telemetry",
+    description: "System telemetry and data collection blocking.",
+    icon: NoSymbolIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Privacy & Tracking",
+    longDescription:
+      "Comprehensive telemetry blocker that disables data collection services, tracking mechanisms, and privacy-invasive features across the operating system and applications.",
+    sampleExecutionParams: [
+      {
+        label: "Blocking Level",
+        type: "select",
+        options: ["Conservative", "Balanced", "Aggressive"],
+        required: true,
+      },
+      {
+        label: "Target Services",
+        type: "select",
+        options: ["OS Only", "Applications", "All Services"],
+        defaultValue: "All Services",
+      },
+      {
+        label: "Backup Settings",
+        type: "select",
+        options: ["Yes", "No"],
+        defaultValue: "Yes",
+      },
+    ],
+    runTemplates: [
+      "OS Telemetry Block",
+      "App Data Collection Stop",
+      "Complete Privacy Mode",
+    ],
+  },
+  {
+    id: "knox_clean_downloads",
+    name: "Clean Downloads",
+    description: "Secure download folder and file cleanup.",
+    icon: ArchiveBoxIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Privacy & Tracking",
+    longDescription:
+      "Advanced download cleaner that securely removes downloaded files, clears download history, and eliminates associated metadata and tracking information.",
+    sampleExecutionParams: [
+      {
+        label: "Age Filter",
+        type: "select",
+        options: [
+          "All Files",
+          "Older than 7 days",
+          "Older than 30 days",
+          "Custom",
+        ],
+        required: true,
+      },
+      {
+        label: "File Types",
+        type: "select",
+        options: ["All Types", "Documents Only", "Media Only", "Executables"],
+        defaultValue: "All Types",
+      },
+      {
+        label: "Secure Delete",
+        type: "select",
+        options: ["Standard", "Secure", "Military"],
+        defaultValue: "Secure",
+      },
+    ],
+    runTemplates: [
+      "Quick Download Clean",
+      "Secure File Purge",
+      "Selective Cleanup",
+    ],
+  },
+  {
+    id: "knox_remove_addons",
+    name: "Remove Add-ons",
+    description: "Browser extension and add-on management.",
+    icon: PuzzlePieceIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Privacy & Tracking",
+    longDescription:
+      "Comprehensive browser add-on manager that identifies and removes potentially malicious, privacy-invasive, or unnecessary browser extensions and plugins.",
+    sampleExecutionParams: [
+      {
+        label: "Browser Target",
+        type: "select",
+        options: ["All Browsers", "Chrome", "Firefox", "Edge", "Safari"],
+        required: true,
+      },
+      {
+        label: "Removal Criteria",
+        type: "select",
+        options: ["Suspicious Only", "Privacy Risk", "All Unknown"],
+        defaultValue: "Privacy Risk",
+      },
+      {
+        label: "Backup Extensions",
+        type: "select",
+        options: ["Yes", "No"],
+        defaultValue: "Yes",
+      },
+    ],
+    runTemplates: ["Security Audit", "Privacy Cleanup", "Complete Removal"],
+  },
+  {
+    id: "knox_dns_leak_blocker",
+    name: "DNS Leak Blocker",
+    description: "DNS leak prevention and secure DNS configuration.",
+    icon: GlobeAltIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Privacy & Tracking",
+    longDescription:
+      "Advanced DNS protection tool that prevents DNS leaks, configures secure DNS servers, and blocks DNS-based tracking and surveillance mechanisms.",
+    sampleExecutionParams: [
+      {
+        label: "DNS Provider",
+        type: "select",
+        options: ["Cloudflare", "Quad9", "Custom", "Multiple"],
+        required: true,
+      },
+      {
+        label: "Protection Level",
+        type: "select",
+        options: ["Basic", "Enhanced", "Paranoid"],
+        defaultValue: "Enhanced",
+      },
+      {
+        label: "Leak Testing",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+    ],
+    runTemplates: [
+      "Quick DNS Setup",
+      "Privacy DNS Config",
+      "Anti-Censorship Setup",
+    ],
+  },
+  {
+    id: "knox_password_extractor",
+    name: "Password Extractor",
+    description: "Saved password recovery and security audit.",
+    icon: KeyIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Privacy & Tracking",
+    longDescription:
+      "Security tool for extracting and analyzing saved passwords from browsers and applications. Helps identify weak passwords and security vulnerabilities.",
+    sampleExecutionParams: [
+      {
+        label: "Source",
+        type: "select",
+        options: ["All Browsers", "System Vault", "Applications", "Custom"],
+        required: true,
+      },
+      {
+        label: "Output Format",
+        type: "select",
+        options: ["Encrypted Report", "Plain Text", "CSV"],
+        defaultValue: "Encrypted Report",
+      },
+      {
+        label: "Security Check",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+    ],
+    runTemplates: [
+      "Password Audit",
+      "Credential Recovery",
+      "Security Assessment",
+    ],
+  },
+  {
+    id: "knox_tracker_detector",
+    name: "Tracker Detector",
+    description: "Web tracker and analytics detection system.",
+    icon: EyeIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Privacy & Tracking",
+    longDescription:
+      "Advanced tracker detection system that identifies and blocks web trackers, analytics scripts, fingerprinting attempts, and other privacy-invasive technologies.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Detection Mode",
+        type: "select",
+        options: ["Real-time", "Analysis Mode", "Report Only"],
+        required: true,
+      },
+      {
+        label: "Tracker Types",
+        type: "select",
+        options: ["All Trackers", "Analytics Only", "Fingerprinting", "Custom"],
+        defaultValue: "All Trackers",
+      },
+      {
+        label: "Action on Detection",
+        type: "select",
+        options: ["Block", "Log Only", "Alert"],
+        defaultValue: "Block",
+      },
+    ],
+    runTemplates: ["Privacy Audit", "Real-time Protection", "Tracker Analysis"],
+  },
+];
+
+// 🛠️ 4. Developer Tools
+const knoxDeveloperToolsArray: Tool[] = [
+  {
+    id: "knox_run_script",
+    name: "Run Custom Script",
+    description: "Execute custom scripts and automation tasks.",
+    icon: CommandLineIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Developer Tools",
+    longDescription:
+      "Advanced script execution environment supporting multiple scripting languages. Includes security sandboxing, execution monitoring, and result analysis.",
+    sampleExecutionParams: [
+      {
+        label: "Script Language",
+        type: "select",
+        options: ["PowerShell", "Bash", "Python", "JavaScript", "Batch"],
+        required: true,
+      },
+      {
+        label: "Script Content",
+        type: "text",
+        required: true,
+        placeholder: "Enter your script content",
+      },
+      {
+        label: "Execution Mode",
+        type: "select",
+        options: ["Normal", "Sandboxed", "Elevated"],
+        defaultValue: "Sandboxed",
+      },
+    ],
+    runTemplates: [
+      "System Information Script",
+      "File Operations",
+      "Network Diagnostics",
+    ],
+  },
+  {
+    id: "knox_debug_console",
+    name: "Debug Console",
+    description: "Advanced debugging and system analysis console.",
+    icon: CodeBracketIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Developer Tools",
+    longDescription:
+      "Comprehensive debugging console with system call tracing, memory analysis, process debugging, and performance profiling capabilities.",
+    sampleExecutionParams: [
+      {
+        label: "Debug Target",
+        type: "select",
+        options: ["Process", "Service", "System", "Network"],
+        required: true,
+      },
+      {
+        label: "Debug Level",
+        type: "select",
+        options: ["Basic", "Detailed", "Verbose"],
+        defaultValue: "Detailed",
+      },
+      {
+        label: "Output Format",
+        type: "select",
+        options: ["Console", "Log File", "JSON"],
+        defaultValue: "Console",
+      },
+    ],
+    runTemplates: ["Process Analysis", "Memory Debug", "System Call Trace"],
+  },
+  {
+    id: "knox_dev_deps",
+    name: "Dev Dependencies Manager",
+    description: "Development environment and dependency management.",
+    icon: CubeTransparentIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Developer Tools",
+    longDescription:
+      "Advanced dependency manager for development environments. Handles package installation, version management, and environment configuration across multiple platforms.",
+    sampleExecutionParams: [
+      {
+        label: "Package Manager",
+        type: "select",
+        options: ["npm", "yarn", "pip", "composer", "cargo"],
+        required: true,
+      },
+      {
+        label: "Action",
+        type: "select",
+        options: ["Install", "Update", "Audit", "Clean"],
+        required: true,
+      },
+      {
+        label: "Environment",
+        type: "select",
+        options: ["Development", "Production", "Testing"],
+        defaultValue: "Development",
+      },
+    ],
+    runTemplates: [
+      "Install Dependencies",
+      "Security Audit",
+      "Environment Setup",
+    ],
+  },
+  {
+    id: "knox_git_tool",
+    name: "Git Tool Runner",
+    description: "Advanced Git operations and repository management.",
+    icon: ShareIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Developer Tools",
+    longDescription:
+      "Comprehensive Git toolkit with advanced repository management, branch operations, security scanning, and automated workflows.",
+    sampleExecutionParams: [
+      {
+        label: "Repository Path",
+        type: "text",
+        required: true,
+        placeholder: "Git repository path",
+      },
+      {
+        label: "Operation",
+        type: "select",
+        options: ["Clone", "Pull", "Push", "Branch", "Merge", "Security Scan"],
+        required: true,
+      },
+      {
+        label: "Options",
+        type: "text",
+        placeholder: "Additional Git options",
+      },
+    ],
+    runTemplates: ["Repository Sync", "Branch Management", "Security Audit"],
+  },
+  {
+    id: "knox_custom_installer",
+    name: "Custom Installer",
+    description: "Advanced package installation and software deployment.",
+    icon: ArchiveBoxIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Developer Tools",
+    longDescription:
+      "Sophisticated software installer with dependency resolution, security verification, and automated configuration. Supports multiple package formats and silent installations.",
+    sampleExecutionParams: [
+      {
+        label: "Package Source",
+        type: "select",
+        options: ["Local File", "URL", "Repository", "Custom"],
+        required: true,
+      },
+      {
+        label: "Installation Mode",
+        type: "select",
+        options: ["Interactive", "Silent", "Custom"],
+        defaultValue: "Silent",
+      },
+      {
+        label: "Verify Signature",
+        type: "select",
+        options: ["Yes", "No"],
+        defaultValue: "Yes",
+      },
+    ],
+    runTemplates: [
+      "Software Installation",
+      "Development Environment",
+      "Automated Deployment",
+    ],
+  },
+  {
+    id: "knox_node_monitor",
+    name: "Node Monitor",
+    description: "Node.js application monitoring and performance analysis.",
+    icon: ChartBarIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Developer Tools",
+    longDescription:
+      "Advanced Node.js monitoring tool providing real-time performance metrics, memory usage analysis, and application health monitoring.",
+    sampleExecutionParams: [
+      {
+        label: "Target Process",
+        type: "text",
+        required: true,
+        placeholder: "Node.js process name or PID",
+      },
+      {
+        label: "Monitoring Duration",
+        type: "number",
+        defaultValue: 60,
+        min: 10,
+        max: 3600,
+      },
+      {
+        label: "Metrics Level",
+        type: "select",
+        options: ["Basic", "Detailed", "Full"],
+        defaultValue: "Detailed",
+      },
+    ],
+    runTemplates: ["Performance Monitor", "Memory Analysis", "Health Check"],
+  },
+  {
+    id: "knox_bg_job_control",
+    name: "Background Job Control",
+    description: "Background process and job management system.",
+    icon: ClockIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Developer Tools",
+    longDescription:
+      "Comprehensive background job management system with scheduling, monitoring, and control capabilities. Supports cron-like scheduling and job queues.",
+    sampleExecutionParams: [
+      {
+        label: "Job Type",
+        type: "select",
+        options: ["Scheduled", "Queue-based", "Event-driven"],
+        required: true,
+      },
+      {
+        label: "Command/Script",
+        type: "text",
+        required: true,
+        placeholder: "Command to execute",
+      },
+      {
+        label: "Schedule",
+        type: "text",
+        placeholder: "Cron expression (if scheduled)",
+      },
+    ],
+    runTemplates: ["Schedule Task", "Queue Job", "Monitor Jobs"],
+  },
+];
+
+// 🌐 5. Network Monitoring Tools
+const knoxNetworkMonitoringArray: Tool[] = [
+  {
+    id: "knox_port_scanner",
+    name: "Open Ports Scanner",
+    description: "Comprehensive network port scanning and analysis.",
+    icon: WifiIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Network Monitoring",
+    longDescription:
+      "Advanced port scanner with stealth capabilities, service detection, and vulnerability assessment. Includes TCP/UDP scanning and OS fingerprinting.",
+    sampleExecutionParams: [
+      {
+        label: "Target Host",
+        type: "text",
+        required: true,
+        placeholder: "IP address or hostname",
+      },
+      {
+        label: "Port Range",
+        type: "text",
+        defaultValue: "1-1000",
+        placeholder: "e.g., 1-1000, 80,443,22",
+      },
+      {
+        label: "Scan Type",
+        type: "select",
+        options: ["TCP SYN", "TCP Connect", "UDP", "Stealth"],
+        defaultValue: "TCP SYN",
+      },
+    ],
+    runTemplates: [
+      "Quick Port Scan",
+      "Service Detection",
+      "Stealth Reconnaissance",
+    ],
+  },
+  {
+    id: "knox_network_analyzer",
+    name: "Network Analyzer",
+    description: "Real-time network traffic analysis and monitoring.",
+    icon: ChartBarIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Network Monitoring",
+    longDescription:
+      "Comprehensive network analyzer providing real-time traffic monitoring, protocol analysis, bandwidth usage tracking, and anomaly detection.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Interface",
+        type: "text",
+        required: true,
+        placeholder: "Network interface (e.g., eth0)",
+      },
+      {
+        label: "Analysis Type",
+        type: "select",
+        options: ["Traffic Monitor", "Protocol Analysis", "Bandwidth Usage"],
+        required: true,
+      },
+      {
+        label: "Duration",
+        type: "number",
+        defaultValue: 300,
+        min: 10,
+        max: 3600,
+      },
+    ],
+    runTemplates: [
+      "Traffic Analysis",
+      "Bandwidth Monitor",
+      "Protocol Statistics",
+    ],
+  },
+  {
+    id: "knox_dns_watcher",
+    name: "DNS Watcher",
+    description: "DNS query monitoring and analysis system.",
+    icon: EyeIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Network Monitoring",
+    longDescription:
+      "Advanced DNS monitoring tool that tracks DNS queries, detects suspicious domains, and provides DNS security analysis with threat intelligence integration.",
+    sampleExecutionParams: [
+      {
+        label: "Monitor Mode",
+        type: "select",
+        options: ["Real-time", "Log Analysis", "Both"],
+        required: true,
+      },
+      {
+        label: "Alert Level",
+        type: "select",
+        options: ["High Risk Only", "Medium & High", "All Activity"],
+        defaultValue: "Medium & High",
+      },
+      {
+        label: "Log Duration",
+        type: "number",
+        defaultValue: 24,
+        min: 1,
+        max: 168,
+      },
+    ],
+    runTemplates: [
+      "DNS Security Monitor",
+      "Query Analysis",
+      "Threat Detection",
+    ],
+  },
+  {
+    id: "knox_firewall_toggle",
+    name: "Firewall Toggle",
+    description: "Dynamic firewall management and rule control.",
+    icon: ShieldCheckIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Network Monitoring",
+    longDescription:
+      "Advanced firewall management tool providing dynamic rule management, profile switching, and intelligent traffic control with automated threat response.",
+    sampleExecutionParams: [
+      {
+        label: "Action",
+        type: "select",
+        options: ["Enable", "Disable", "Configure", "Reset"],
+        required: true,
+      },
+      {
+        label: "Profile",
+        type: "select",
+        options: ["Home", "Work", "Public", "Gaming"],
+        defaultValue: "Home",
+      },
+      {
+        label: "Rule Set",
+        type: "select",
+        options: ["Conservative", "Balanced", "Open"],
+        defaultValue: "Balanced",
+      },
+    ],
+    runTemplates: ["Quick Toggle", "Profile Switch", "Custom Configuration"],
+  },
+  {
+    id: "knox_arp_inspection",
+    name: "ARP Inspection",
+    description: "ARP table monitoring and spoofing detection.",
+    icon: MagnifyingGlassIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Network Monitoring",
+    longDescription:
+      "Advanced ARP inspection tool that monitors ARP table changes, detects ARP spoofing attacks, and provides network security analysis.",
+    sampleExecutionParams: [
+      {
+        label: "Inspection Mode",
+        type: "select",
+        options: ["Continuous", "Periodic", "On-Demand"],
+        required: true,
+      },
+      {
+        label: "Alert Threshold",
+        type: "select",
+        options: ["Conservative", "Balanced", "Sensitive"],
+        defaultValue: "Balanced",
+      },
+      {
+        label: "Log Changes",
+        type: "select",
+        options: ["Yes", "No"],
+        defaultValue: "Yes",
+      },
+    ],
+    runTemplates: ["ARP Security Scan", "Spoofing Detection", "Network Audit"],
+  },
+  {
+    id: "knox_vpn_toggle",
+    name: "VPN Toggle",
+    description: "VPN connection management and monitoring.",
+    icon: GlobeAltIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Network Monitoring",
+    longDescription:
+      "Comprehensive VPN management tool with connection monitoring, performance analysis, and automatic failover capabilities.",
+    sampleExecutionParams: [
+      {
+        label: "VPN Provider",
+        type: "select",
+        options: ["OpenVPN", "WireGuard", "IPSec", "Auto-Detect"],
+        required: true,
+      },
+      {
+        label: "Action",
+        type: "select",
+        options: ["Connect", "Disconnect", "Status", "Speed Test"],
+        required: true,
+      },
+      {
+        label: "Server Location",
+        type: "select",
+        options: ["Auto", "US", "EU", "Asia", "Custom"],
+        defaultValue: "Auto",
+      },
+    ],
+    runTemplates: ["Quick Connect", "Performance Test", "Connection Monitor"],
+  },
+  {
+    id: "knox_device_pinger",
+    name: "Device Pinger",
+    description: "Network device discovery and connectivity testing.",
+    icon: SignalIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox Network Monitoring",
+    longDescription:
+      "Advanced network discovery tool that identifies devices on the network, tests connectivity, and provides detailed device information.",
+    sampleExecutionParams: [
+      {
+        label: "Target Range",
+        type: "text",
+        required: true,
+        placeholder: "IP range (e.g., 192.168.1.0/24)",
+      },
+      {
+        label: "Ping Method",
+        type: "select",
+        options: ["ICMP", "TCP", "UDP", "ARP"],
+        defaultValue: "ICMP",
+      },
+      {
+        label: "Discovery Depth",
+        type: "select",
+        options: ["Basic", "Standard", "Deep"],
+        defaultValue: "Standard",
+      },
+    ],
+    runTemplates: ["Network Discovery", "Connectivity Test", "Device Audit"],
+  },
+];
+
+// 🧠 6. AI & Behavioral Analysis Tools
+const knoxAIAnalysisArray: Tool[] = [
+  {
+    id: "knox_ai_scan_analysis",
+    name: "Analyze Scan with AI",
+    description: "AI-powered security scan result analysis.",
+    icon: SparklesIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox AI & Analysis",
+    longDescription:
+      "Advanced AI analysis engine that interprets security scan results, identifies patterns, and provides intelligent threat assessment with actionable recommendations.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Analysis Type",
+        type: "select",
+        options: ["Security Scan", "Network Analysis", "System Audit"],
+        required: true,
+      },
+      {
+        label: "AI Model",
+        type: "select",
+        options: ["Gemini Pro", "Local LLM", "Hybrid"],
+        defaultValue: "Gemini Pro",
+      },
+      {
+        label: "Detail Level",
+        type: "select",
+        options: ["Summary", "Detailed", "Technical"],
+        defaultValue: "Detailed",
+      },
+    ],
+    runTemplates: [
+      "Threat Analysis",
+      "Vulnerability Assessment",
+      "Risk Evaluation",
+    ],
+  },
+  {
+    id: "knox_behavior_detection",
+    name: "Detect Suspicious Behavior",
+    description: "AI-driven behavioral anomaly detection system.",
+    icon: EyeIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox AI & Analysis",
+    longDescription:
+      "Machine learning-based behavioral analysis system that monitors system activities, user behavior, and network patterns to detect anomalies and potential threats.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Monitoring Scope",
+        type: "select",
+        options: [
+          "User Behavior",
+          "System Processes",
+          "Network Activity",
+          "All",
+        ],
+        required: true,
+      },
+      {
+        label: "Sensitivity Level",
+        type: "select",
+        options: ["Conservative", "Balanced", "Aggressive"],
+        defaultValue: "Balanced",
+      },
+      {
+        label: "Learning Period",
+        type: "number",
+        defaultValue: 7,
+        min: 1,
+        max: 30,
+      },
+    ],
+    runTemplates: [
+      "Behavioral Baseline",
+      "Anomaly Detection",
+      "Threat Hunting",
+    ],
+  },
+  {
+    id: "knox_log_summarizer",
+    name: "Summarize Logs",
+    description: "AI-powered log analysis and summarization.",
+    icon: DocumentChartBarIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox AI & Analysis",
+    longDescription:
+      "Intelligent log analysis tool that processes large volumes of system and security logs, extracting key insights and providing comprehensive summaries.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Log Source",
+        type: "select",
+        options: ["System Logs", "Security Logs", "Application Logs", "All"],
+        required: true,
+      },
+      {
+        label: "Time Range",
+        type: "select",
+        options: ["Last Hour", "Last 24h", "Last Week", "Custom"],
+        defaultValue: "Last 24h",
+      },
+      {
+        label: "Summary Type",
+        type: "select",
+        options: ["Executive", "Technical", "Security Focus"],
+        defaultValue: "Security Focus",
+      },
+    ],
+    runTemplates: [
+      "Security Summary",
+      "System Health Report",
+      "Incident Analysis",
+    ],
+  },
+  {
+    id: "knox_threat_reporter",
+    name: "Generate Threat Report",
+    description: "Comprehensive AI-generated threat intelligence reports.",
+    icon: DocumentChartBarIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox AI & Analysis",
+    longDescription:
+      "Advanced threat intelligence system that generates comprehensive security reports with AI analysis, risk assessment, and strategic recommendations.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Report Type",
+        type: "select",
+        options: ["Executive Summary", "Technical Report", "Incident Response"],
+        required: true,
+      },
+      {
+        label: "Data Sources",
+        type: "select",
+        options: ["Scan Results", "Log Analysis", "Network Data", "All"],
+        defaultValue: "All",
+      },
+      {
+        label: "Audience Level",
+        type: "select",
+        options: ["Management", "IT Team", "Security Team"],
+        defaultValue: "Security Team",
+      },
+    ],
+    runTemplates: ["Security Assessment", "Risk Analysis", "Compliance Report"],
+  },
+  {
+    id: "knox_risk_tagger",
+    name: "Auto Risk Tagging",
+    description: "Automated risk classification and tagging system.",
+    icon: TagIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox AI & Analysis",
+    longDescription:
+      "AI-powered risk classification system that automatically categorizes threats, assigns risk levels, and tags security findings for prioritized response.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Classification Model",
+        type: "select",
+        options: ["Standard", "Industry Specific", "Custom"],
+        required: true,
+      },
+      {
+        label: "Risk Framework",
+        type: "select",
+        options: ["CVSS", "NIST", "Custom Scale"],
+        defaultValue: "CVSS",
+      },
+      {
+        label: "Auto-Action",
+        type: "select",
+        options: ["Tag Only", "Alert High Risk", "Auto-Response"],
+        defaultValue: "Alert High Risk",
+      },
+    ],
+    runTemplates: [
+      "Risk Assessment",
+      "Threat Prioritization",
+      "Automated Triage",
+    ],
+  },
+  {
+    id: "knox_realtime_suggestions",
+    name: "Real-Time Suggestions",
+    description: "AI-powered real-time security recommendations.",
+    icon: LightBulbIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox AI & Analysis",
+    longDescription:
+      "Intelligent recommendation system that provides real-time security suggestions, optimization tips, and proactive threat mitigation strategies.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Suggestion Context",
+        type: "select",
+        options: ["Security Posture", "Performance", "Compliance", "All"],
+        required: true,
+      },
+      {
+        label: "Priority Level",
+        type: "select",
+        options: ["Critical Only", "High & Critical", "All Levels"],
+        defaultValue: "High & Critical",
+      },
+      {
+        label: "Action Type",
+        type: "select",
+        options: ["Immediate", "Scheduled", "Advisory"],
+        defaultValue: "Advisory",
+      },
+    ],
+    runTemplates: [
+      "Security Optimization",
+      "Proactive Defense",
+      "Compliance Check",
+    ],
+  },
+  {
+    id: "knox_llm_defender",
+    name: "LLM Auto Defender",
+    description: "AI-powered autonomous defense system.",
+    icon: RocketLaunchIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox AI & Analysis",
+    longDescription:
+      "Advanced autonomous defense system powered by large language models, providing intelligent threat response, automated mitigation, and adaptive security measures.",
+    isGeminiPowered: true,
+    sampleExecutionParams: [
+      {
+        label: "Defense Mode",
+        type: "select",
+        options: ["Passive Monitor", "Active Defense", "Autonomous"],
+        required: true,
+      },
+      {
+        label: "Response Level",
+        type: "select",
+        options: ["Alert Only", "Contain", "Eliminate"],
+        defaultValue: "Contain",
+      },
+      {
+        label: "Learning Mode",
+        type: "select",
+        options: ["Static", "Adaptive", "Continuous"],
+        defaultValue: "Adaptive",
+      },
+    ],
+    runTemplates: [
+      "Autonomous Protection",
+      "Threat Response",
+      "Adaptive Defense",
+    ],
+  },
+];
+
+// 🎨 7. UI Control & User Management Tools
+const knoxUIControlArray: Tool[] = [
+  {
+    id: "knox_toggle_theme",
+    name: "Toggle Theme",
+    description: "Dynamic theme switching and UI customization.",
+    icon: SwatchIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox UI Control",
+    longDescription:
+      "Advanced theme management system with cyberpunk aesthetics, glassmorphic effects, and customizable UI elements. Supports light, dark, and custom themes.",
+    sampleExecutionParams: [
+      {
+        label: "Theme Mode",
+        type: "select",
+        options: ["Dark Cyberpunk", "Light Cyber", "Matrix Green", "Custom"],
+        required: true,
+      },
+      {
+        label: "Glass Effect",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+      {
+        label: "Animation Level",
+        type: "select",
+        options: ["Minimal", "Standard", "Enhanced"],
+        defaultValue: "Standard",
+      },
+    ],
+    runTemplates: ["Cyberpunk Dark", "Matrix Theme", "Custom Setup"],
+  },
+  {
+    id: "knox_switch_language",
+    name: "Switch Language",
+    description: "Multi-language interface management system.",
+    icon: LanguageIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox UI Control",
+    longDescription:
+      "Comprehensive internationalization system supporting Arabic and English with RTL/LTR layout switching and cultural adaptations.",
+    sampleExecutionParams: [
+      {
+        label: "Target Language",
+        type: "select",
+        options: ["العربية (Arabic)", "English", "Auto-Detect"],
+        required: true,
+      },
+      {
+        label: "Layout Direction",
+        type: "select",
+        options: ["Auto", "LTR", "RTL"],
+        defaultValue: "Auto",
+      },
+      {
+        label: "Regional Settings",
+        type: "select",
+        options: ["Default", "Saudi Arabia", "UAE", "Custom"],
+        defaultValue: "Default",
+      },
+    ],
+    runTemplates: [
+      "Arabic Interface",
+      "English Interface",
+      "Multi-Language Setup",
+    ],
+  },
+  {
+    id: "knox_manage_notifications",
+    name: "Manage Notifications",
+    description: "Advanced notification and alert management system.",
+    icon: BellIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox UI Control",
+    longDescription:
+      "Comprehensive notification management with priority filtering, custom alerts, and intelligent notification grouping with AI-powered relevance scoring.",
+    sampleExecutionParams: [
+      {
+        label: "Notification Level",
+        type: "select",
+        options: ["Critical Only", "High Priority", "All Notifications"],
+        required: true,
+      },
+      {
+        label: "Alert Style",
+        type: "select",
+        options: ["Toast", "Modal", "Sound + Visual"],
+        defaultValue: "Toast",
+      },
+      {
+        label: "Auto-Dismiss",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+    ],
+    runTemplates: [
+      "Critical Alerts Only",
+      "Standard Notifications",
+      "Custom Setup",
+    ],
+  },
+  {
+    id: "knox_safe_mode",
+    name: "Safe Mode",
+    description: "System safe mode and emergency protection.",
+    icon: ShieldCheckIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox UI Control",
+    longDescription:
+      "Emergency safe mode system that disables potentially dangerous features, enables enhanced monitoring, and provides secure system operation.",
+    sampleExecutionParams: [
+      {
+        label: "Safe Mode Level",
+        type: "select",
+        options: ["Basic", "Enhanced", "Lockdown"],
+        required: true,
+      },
+      {
+        label: "Duration",
+        type: "select",
+        options: ["Until Manual Disable", "1 Hour", "24 Hours"],
+        defaultValue: "Until Manual Disable",
+      },
+      {
+        label: "Allowed Operations",
+        type: "select",
+        options: ["Read Only", "Limited Write", "Emergency Only"],
+        defaultValue: "Limited Write",
+      },
+    ],
+    runTemplates: [
+      "Emergency Mode",
+      "Maintenance Safe Mode",
+      "Security Lockdown",
+    ],
+  },
+  {
+    id: "knox_customize_layout",
+    name: "Customize Layout",
+    description: "Advanced UI layout customization and workspace management.",
+    icon: WindowIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox UI Control",
+    longDescription:
+      "Sophisticated layout management system with drag-and-drop interface, custom dashboards, and workspace profiles for different use cases.",
+    sampleExecutionParams: [
+      {
+        label: "Layout Type",
+        type: "select",
+        options: ["Compact", "Standard", "Expanded", "Custom"],
+        required: true,
+      },
+      {
+        label: "Workspace Mode",
+        type: "select",
+        options: ["Security Focus", "Developer Mode", "Analyst View"],
+        defaultValue: "Security Focus",
+      },
+      {
+        label: "Panel Configuration",
+        type: "select",
+        options: ["Auto", "Manual", "Profile-Based"],
+        defaultValue: "Auto",
+      },
+    ],
+    runTemplates: [
+      "Security Dashboard",
+      "Developer Workspace",
+      "Custom Layout",
+    ],
+  },
+  {
+    id: "knox_secure_profile",
+    name: "Secure Profile",
+    description: "User profile security and access management.",
+    icon: UserGroupIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox UI Control",
+    longDescription:
+      "Advanced user profile management with security controls, access restrictions, and behavioral monitoring for enhanced user account protection.",
+    sampleExecutionParams: [
+      {
+        label: "Security Level",
+        type: "select",
+        options: ["Standard", "Enhanced", "Maximum"],
+        required: true,
+      },
+      {
+        label: "Access Controls",
+        type: "select",
+        options: ["Basic", "Role-Based", "Custom"],
+        defaultValue: "Role-Based",
+      },
+      {
+        label: "Monitoring Level",
+        type: "select",
+        options: ["Minimal", "Standard", "Comprehensive"],
+        defaultValue: "Standard",
+      },
+    ],
+    runTemplates: ["Secure Setup", "Admin Profile", "Guest Access"],
+  },
+  {
+    id: "knox_lock_devtools",
+    name: "Lock DevTools",
+    description: "Developer tools access control and security.",
+    icon: LockClosedIcon,
+    status: ToolStatus.NotLoaded,
+    category: "Knox UI Control",
+    longDescription:
+      "Security mechanism to control access to developer tools and debugging features, preventing unauthorized system manipulation and security bypasses.",
+    sampleExecutionParams: [
+      {
+        label: "Lock Level",
+        type: "select",
+        options: ["Disable", "Restrict", "Monitor"],
+        required: true,
+      },
+      {
+        label: "Access Method",
+        type: "select",
+        options: ["Password", "Biometric", "Admin Only"],
+        defaultValue: "Password",
+      },
+      {
+        label: "Logging",
+        type: "select",
+        options: ["Enabled", "Disabled"],
+        defaultValue: "Enabled",
+      },
+    ],
+    runTemplates: ["Complete Lock", "Restricted Access", "Monitor Only"],
   },
 ];
 
