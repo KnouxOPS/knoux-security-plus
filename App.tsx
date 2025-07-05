@@ -832,6 +832,7 @@ const App: React.FC = () => {
               element={<ToolDetailPage />}
             />
             <Route path="/live-operations" element={<LiveOperationsPage />} />
+            <Route path="/vpn" element={<VPNDashboard />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/support" element={<SupportPage />} />
             <Route path="/update" element={<UpdatePage />} />
