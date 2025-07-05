@@ -244,7 +244,7 @@ export const AR_TEXTS: LocalizedTexts = {
   ANALYZE_WITH_AI_BUTTON: "تحليل بواسطة AI 🧠",
 
   WELCOME_MESSAGE:
-    "أهلاً بك يا سيد نوكس! هل أنت مستعد لإحداث ثورة في سير عملك؟",
+    "أهلاً بك يا سيد نوك��! هل أنت مستعد لإحداث ثورة في سير عملك؟",
   TOOLTIP_TEXT: "جرّبني يا نوكس!",
   SUCCESS_TOAST: "بيضتها يا سيد السكربتات! ✅",
   NO_ACTIVE_TOOLS_ALERT:
@@ -326,7 +326,7 @@ export const AR_TEXTS: LocalizedTexts = {
   EMAIL_BREACH_LOOKUP_DESC:
     "تحقق مما إذا كان بريد إلكتروني قد تم اختراقه في تسريبات بيانات معروفة.",
   EMAIL_BREACH_LOOKUP_LONG_DESC:
-    "أدخل عنوان ��ريد إلكتروني للتحقق منه مقابل قاعدة بيانات لتسريبات البيانات المعروفة (محاكاة). تساعد هذه الأداة في تحديد التعرض المحتمل لبيانات الاعتماد أو المعلومات الشخصية. لإجراء عمليات تحقق حقيقية، استخدم خدمات موثوقة مثل Have I Been Pwned.",
+    "أدخل عنوان ��ريد إلكتروني للتحقق منه مقابل قاعدة بيانات لتسريبات البيانات المعروفة (محاكاة). تساعد هذه الأداة في تحديد التعرض المحتمل لبيانات ��لاعتماد أو المعلومات الشخصية. لإجراء عمليات تحقق حقيقية، استخدم خدمات موثوقة مثل Have I Been Pwned.",
   EMAIL_BREACH_INPUT_LABEL: "البريد الإلكتروني المراد فحصه",
   EMAIL_BREACH_CHECK_BUTTON: "فحص البريد",
   EMAIL_BREACH_ANALYZING: (params: { email: string }) =>
@@ -3285,34 +3285,46 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
 export const NAV_ITEMS = [
   { name: "Dashboard", path: "/", icon: HomeIcon, i18nKey: "DASHBOARD_TITLE" },
   {
-    name: "Protection",
-    path: "/category/offensive-security",
+    name: "Knox Shield",
+    path: "/category/knox-system-protection",
     icon: ShieldCheckIcon,
-    i18nKey: "Offensive Security Tools",
+    i18nKey: "🔰 Knox System Protection",
+  },
+  {
+    name: "Attack Tools",
+    path: "/category/knox-attack-tools",
+    icon: FireIcon,
+    i18nKey: "🔥 Knox Attack Tools",
   },
   {
     name: "Privacy",
-    path: "/privacy",
-    icon: LockClosedIcon,
-    i18nKey: "Privacy",
+    path: "/category/knox-privacy-tracking",
+    icon: EyeIcon,
+    i18nKey: "🧹 Knox Privacy & Tracking",
+  },
+  {
+    name: "AI Analysis",
+    path: "/category/knox-ai-analysis",
+    icon: SparklesIcon,
+    i18nKey: "🧠 Knox AI & Analysis",
+  },
+  {
+    name: "Network",
+    path: "/category/knox-network-monitoring",
+    icon: WifiIcon,
+    i18nKey: "🌐 Knox Network Monitoring",
   },
   {
     name: "Developer Tools",
-    path: "/category/developer-tools",
+    path: "/category/knox-developer-tools",
     icon: CodeBracketIcon,
-    i18nKey: "Developer Tools",
+    i18nKey: "🛠️ Knox Developer Tools",
   },
   {
-    name: "AI & Bots",
-    path: "/category/bots-ai-models",
-    icon: SparklesIcon,
-    i18nKey: "Bots & AI Models",
-  },
-  {
-    name: "Utility",
-    path: "/category/post-format-utilities",
-    icon: WrenchScrewdriverIcon,
-    i18nKey: "Post-Format Utilities",
+    name: "UI Control",
+    path: "/category/knox-ui-control",
+    icon: SwatchIcon,
+    i18nKey: "🎨 Knox UI Control",
   },
   {
     name: "Live Operations",
