@@ -233,10 +233,10 @@ export const AR_TEXTS: LocalizedTexts = {
   STOP_BUTTON: "إيقاف",
   FORCE_STOP_BUTTON: "إيقاف إجباري",
   VIEW_LOG_BUTTON: "عرض السجل",
-  BROWSE_FULL_RESULTS_BUTTON: "استعراض النتائج الكاملة",
+  BROWSE_FULL_RESULTS_BUTTON: "است��راض النتائج الكاملة",
   EXPORT_RESULTS_BUTTON: "تصدير النتائج",
   SAVE_TEMPLATE_BUTTON: "حفظ القالب",
-  IMPORT_EXPORT_CONFIG_BUTTON: "استيراد/تصدير الإعدادات",
+  IMPORT_EXPORT_CONFIG_BUTTON: "استيراد/تصدير ��لإعدادات",
   APPLY_PARAMS_BUTTON: "طبّق وشغّل",
   SEND_MESSAGE_BUTTON: "أرسل 💬",
   ANALYZE_WITH_AI_BUTTON: "تحليل بواسطة AI 🧠",
@@ -287,7 +287,7 @@ export const AR_TEXTS: LocalizedTexts = {
     "مفتاح Gemini API غير موجود. ميزات الذكاء الاصطناعي ستكون معطلة. يرجى التأكد من تكوين متغير البيئة 'API_KEY' بشكل صحيح.",
   AI_INIT_ERROR: "خطأ في تهيئة Gemini AI. قد تكون الميزات محدودة.",
   AI_CHAT_ERROR: "خطأ في الاتصال بـ Gemini AI.",
-  AI_CHAT_FAIL_MESSAGE: "عذرًا، واجهت خطأ. حاول مرة اخرى.",
+  AI_CHAT_FAIL_MESSAGE: "��ذرًا، واجهت خطأ. حاول مرة اخرى.",
   SWITCH_TO_LIGHT_MODE: "��لتبديل إلى الوضع الفاتح",
   SWITCH_TO_DARK_MODE: "التبديل إلى الوضع الداكن",
   SWITCH_TO_ARABIC: "التبديل إلى اللغة العربية",
@@ -315,7 +315,7 @@ export const AR_TEXTS: LocalizedTexts = {
   THREAT_DB_SIGNATURE_SCAN: "مطابقة توقيعات الملفات...",
   THREAT_DETECTED_PREFIX: "تم اكتشاف تهديد:",
   THREAT_ANALYSIS_PROMPT_PREFIX:
-    "حلل نتائج الفحص الأمني المحتملة التالية. قدم ت��ييمًا موجزًا للمخاطر، والتأثير المحتمل، ونصائح عامة للتخفيف لكل منها. نسقها كتقرير قابل للقراءة:\n\n",
+    "حلل نتائج الفحص الأمني المحتملة التالية. قدم تقييمًا موجزًا للمخاطر، والتأثير المحتمل، ونصائح عامة للتخفيف لكل منها. نسقها كتقرير قابل للقراءة:\n\n",
   THREAT_TYPE_PROCESS: "عملية قد تكون ضارة",
   THREAT_TYPE_STARTUP: "عنصر بدء تشغيل مشبوه",
   THREAT_TYPE_SIGNATURE: "مطابقة توقيع برنامج ضار",
@@ -3220,6 +3220,63 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
       "Platforms, frameworks, and tools for building, training, and deploying AI models and bots. Now with Gemini power!",
     icon: SparklesIcon,
     tools: botsAndAIModelsArray,
+  },
+  // 🛡️ KNOUX SHIELD - SentinelTracker Edition Categories
+  {
+    id: "knox-system-protection",
+    name: "🔰 Knox System Protection",
+    description:
+      "🛡️ Advanced system defense and real-time protection. Direct defense of your device against any internal threat with military-grade security tools.",
+    icon: ShieldCheckIcon,
+    tools: knoxSystemProtectionArray,
+  },
+  {
+    id: "knox-attack-tools",
+    name: "🔥 Knox Attack Tools",
+    description:
+      "⚔️ Penetration testing and cybersecurity offensive tools. Advanced attack simulation and security testing capabilities for red team operations.",
+    icon: FireIcon,
+    tools: knoxAttackToolsArray,
+  },
+  {
+    id: "knox-privacy-tracking",
+    name: "🧹 Knox Privacy & Tracking",
+    description:
+      "🔒 Complete digital footprint elimination and anti-tracking. Remove every digital trace and protect your privacy with forensic-grade tools.",
+    icon: EyeIcon,
+    tools: knoxPrivacyTrackingArray,
+  },
+  {
+    id: "knox-developer-tools",
+    name: "🛠️ Knox Developer Tools",
+    description:
+      "💻 Advanced development environment management. Professional developer toolkit with script execution, debugging, and automation capabilities.",
+    icon: CodeBracketIcon,
+    tools: knoxDeveloperToolsArray,
+  },
+  {
+    id: "knox-network-monitoring",
+    name: "🌐 Knox Network Monitoring",
+    description:
+      "📡 Comprehensive network analysis and monitoring. Real-time network traffic analysis, port scanning, and security monitoring tools.",
+    icon: WifiIcon,
+    tools: knoxNetworkMonitoringArray,
+  },
+  {
+    id: "knox-ai-analysis",
+    name: "🧠 Knox AI & Analysis",
+    description:
+      "🤖 AI-powered behavioral analysis and threat intelligence. Advanced machine learning for threat detection and security analysis with Gemini AI.",
+    icon: SparklesIcon,
+    tools: knoxAIAnalysisArray,
+  },
+  {
+    id: "knox-ui-control",
+    name: "🎨 Knox UI Control",
+    description:
+      "⚙️ Advanced interface control and user management. Complete control over UI themes, languages, notifications, and security profiles.",
+    icon: SwatchIcon,
+    tools: knoxUIControlArray,
   },
 ];
 
